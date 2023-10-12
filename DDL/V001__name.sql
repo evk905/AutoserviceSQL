@@ -1,19 +1,19 @@
 CREATE TABLE carbrand(
 id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-name_carbrand CHARACTER VARYING(150) NOT NULL
+name_carbrand CHARACTER VARYING(150) NOT NULL UNIQUE
 );
 
 CREATE TABLE carmodel(
 id bigint  PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-name_carmodel CHARACTER VARYING(150) NOT NULL,
+name_carmodel CHARACTER VARYING(150) NOT NULL UNIQUE,
 carbrand_id INTEGER NOT NULL,
 FOREIGN KEY (carbrand_id) REFERENCES carbrand (id) 
 );
 
 CREATE TABLE color(
 id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-carbrand_id CHARACTER VARYING(50),
-code_color CHARACTER VARYING(150) UNIQUE,
+carbrand_id CHARACTER VARYING(50) NOT NULL,
+code_color CHARACTER VARYING(150) UNIQUE NOT NULL,
 name_color CHARACTER VARYING(150),
 FOREIGN KEY (carbrand_id) REFERENCES carbrand(id) 
 );
@@ -67,3 +67,11 @@ FOREIGN KEY (car_id) REFERENCES car(id),
 FOREIGN KEY (customer_id) REFERENCES customer(id),
 FOREIGN KEY (employee_id) REFERENCES  employee(id) 
 );
+
+BEGIN;
+ALTER table customer ADD passport CHARACTER VARYING(150);
+ALTER table customer ALTER passport SET NOT NULL;
+CREATE UNIQUE INDEX passport_idx ON customer(passport);
+COMMIT;
+
+CREATE INDEX release_year_idx ON car(release_year);
