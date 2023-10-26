@@ -82,6 +82,4 @@ RIGHT JOIN table2 ON table1.parameter=table2.parameter;''
     • В таблицу добавляются значения не вошедшие в результат формирования из правой таблицы (RIGHT OUTER JOIN) 
 
 ## **Резюме**
-
-[<img src="image-2.png" width="250"/>](image-2.png)
-
+![Alt text](image-2.png)
