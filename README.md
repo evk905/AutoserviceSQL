@@ -25,7 +25,9 @@ WHERE table1.column_name = table2.column_name;''
 
 ### **Self Join**
 Когда необходимо выполнить фильтрацию контента внутри одной таблицы.
-![Alt text](image.png)
+
+
+[<img src="image.png" width="250"/>](image.png)
 
 
 ### **SQL Cross Join**
@@ -37,7 +39,9 @@ CROSS JOIN table-2''
 
 Полученный набор данных называют декартовым произведением. Схематично его часто изображают как большое количество перекрестий между двумя группами элементов.
 Такой вид JOIN применяется в онлайн-магазинах для вывода всех возможных пар по выбранным характеристикам одежды (цвету и размеру или другим параметрам).
-60x20:![Alt text](image-1.png)
+
+
+[<img src="image-1.png" width="250"/>](image-1.png)
 
 ### **SQL Outer Join**
 
@@ -78,4 +82,4 @@ RIGHT JOIN table2 ON table1.parameter=table2.parameter;''
     • В таблицу добавляются значения не вошедшие в результат формирования из правой таблицы (RIGHT OUTER JOIN) 
 
 ## **Резюме**
-![Alt text](image-2.png)
+[<img src="image-2.png" width="250"/>](image-2.png)
